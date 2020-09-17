@@ -25,32 +25,32 @@ include_once './includes/bdd.inc.php';
                     <form method="post" action="treatment.php"  >
                         <h1>Ajouter</h1>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">nom</label>
-                            <input type="text"  class="form-control" id="nom" name="nom" aria-describedby="emailHelp" placeholder="nom de la plante">
+                            <label for="exampleInputEmail1">type matériel</label>
+                            <input type="text"  class="form-control" id="typeMateriel" name="typeMateriel" aria-describedby="emailHelp" placeholder="ex:ordinateur">
                              
                         <div class="form-group">
-                            <label for="exampleInputEmail1">famille de la plante</label>
-                            <input type="text" class="form-control" id="famille" name="famille" aria-describedby="emailHelp" placeholder="famille de la plante">
-                            <!--id	-nom	-periodeP	-periodeR	-conseil	-quantite	-visuelle	-famille-->
+                            <label for="exampleInputEmail1">état</label>
+                            <input type="text" class="form-control" id="etat" name="etat" aria-describedby="emailHelp" placeholder="ex:bon état">
+                           
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">periode plantation</label>
-                            <input type="number"  class="form-control" id="periodeP" name="periodeP" aria-describedby="emailHelp" placeholder="07/03/2019">
+                            <label for="exampleInputEmail1">localisation</label>
+                            <input type="text"  class="form-control" id="localisation" name="localisation" aria-describedby="emailHelp" placeholder="ex:paris">
                             
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">periode de recolte</label>
-                            <input type="number" class="form-control" id="periodeR" name="periodeR" aria-describedby="emailHelp" placeholder="07/03/2019">
+                            <label for="exampleInputEmail1">quantite</label>
+                            <input type="number" class="form-control" id="quantite" name="quantite" aria-describedby="emailHelp" placeholder="ex:1">
                             
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">quantité</label>
-                            <input type="number" class="form-control" id="quantité" name="quantite" aria-describedby="emailHelp" placeholder="4">
+                            <label for="exampleInputEmail1">information</label>
+                            <input type="text" class="form-control" id="information" name="information" aria-describedby="emailHelp" placeholder="ex:bouton power derrière écran">
                             
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">conseil</label>
-                            <input type="text" class="form-control" id="conseil" name="conseil" aria-describedby="emailHelp" placeholder="conseil">
+                            <label for="exampleInputEmail1">marque</label>
+                            <input type="text" class="form-control" id="marque" name="marque" aria-describedby="emailHelp" placeholder="ex:asus">
                             
                         </div>
                         <!-- <div class="form-group">

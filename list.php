@@ -21,20 +21,20 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                <th scope="col">visuelle</th>
-                                    <th scope="col">nom</th>
-                                    <th scope="col">periode de plantation</th>
-                                    <th scope="col">periode de recolte</th>
-                                    <th scope="col">conseil</th>
+                                    <th scope="col">visuelle</th>
+                                    <th scope="col">type materiel</th>
+                                    <th scope="col">etat</th>
+                                    <th scope="col">localisation</th>
                                     <th scope="col">quantite</th>
-                                    <th scope="col">famille</th>
+                                    <th scope="col">information</th>
+                                    <th scope="col">marque</th>
                                 </tr>
                             </thead>
                             <tbody>  
                               
                               
                                 <?php
-                                    $req = $bdd->prepare('SELECT * FROM graines');
+                                    $req = $bdd->prepare('SELECT * FROM simplonStock');
                                     $req->execute();
                                     echo '<tr>';
                                         while ($donnees = $req->fetch()){
@@ -42,13 +42,14 @@
 
                                 <tr>
                                     <td><img src="img/<?php echo $donnees['visuelle']; ?>"/></td>
+                                    
                                     <!-- <td><?php /*echo $donnees["visuelle"]*/ ?></td> -->
-                                    <td><?php echo $donnees ["nom"] ?></td>
-                                    <td><?php echo $donnees ["periodeP"] ?></td>
-                                    <td><?php echo $donnees ["periodeR"] ?></td>
-                                    <td><?php echo $donnees ["conseil"] ?></td>
+                                    <td><?php echo $donnees ["typeMateriel"] ?></td>
+                                    <td><?php echo $donnees ["etat"] ?></td>
+                                    <td><?php echo $donnees ["localisation"] ?></td>
                                     <td><?php echo $donnees ["quantite"] ?></td>
-                                    <td><?php echo $donnees ["famille"] ?></td>
+                                    <td><?php echo $donnees ["information"] ?></td>
+                                    <td><?php echo $donnees ["marque"] ?></td>
 
                                     <td><a href="form-edit.php?edit=<?php echo $donnees['id'] ?>" role="button">Modifier</a></td>
                                     <td><a href="treatment.php?del=<?php echo $donnees['id'] ?>" role="button">Supprimer</a></td>                                   
@@ -58,17 +59,7 @@
                              
                             
                                 
-                                <!-- $reponse =$pdo->query('SELECT*FROM apprenants');
-                                while ($donnees=$pseudo->fetch)
-                                while ($donnees=$city->fetch)
-                                while ($donnees=$cp->fetch)
-                                {
-                                     echo $donnees['pseudo']; 
-                                
-                                
-
-                                
-                                } -->
+                              
                           
                                 
                                

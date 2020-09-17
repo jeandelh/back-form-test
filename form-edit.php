@@ -3,12 +3,11 @@
 include 'includes/bdd.inc.php'; 
     $id=$_GET['edit'];
 
-    $req = $bdd->prepare('SELECT * FROM graines WHERE id=' . $id);
+    $req = $bdd->prepare('SELECT * FROM simplonstock WHERE id=' . $id);
     $req->execute();
     $donnees = $req->fetch();
-    //print_r($donnees);
+    // print_r($donnees);
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -27,63 +26,61 @@ include 'includes/bdd.inc.php';
 
                 <div class="col-md-9">
                     <section>
+                    <form method="post" action="treatment.php"  >
+                        <h1>modifier</h1>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">type matériel</label>
+                            <input type="text"  class="form-control" id="typeMateriel" name="typeMateriel" aria-describedby="emailHelp" placeholder="ex:ordinateur">
+                             
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">état</label>
+                            <input type="text" class="form-control" id="etat" name="etat" aria-describedby="emailHelp" placeholder="ex:bon état">
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">localisation</label>
+                            <input type="text"  class="form-control" id="localisation" name="localisation" aria-describedby="emailHelp" placeholder="ex:paris">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">quantite</label>
+                            <input type="number" class="form-control" id="quantite" name="quantite" aria-describedby="emailHelp" placeholder="ex:1">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">information</label>
+                            <input type="text" class="form-control" id="information" name="information" aria-describedby="emailHelp" placeholder="ex:bouton power derrière écran">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">marque</label>
+                            <input type="text" class="form-control" id="marque" name="marque" aria-describedby="emailHelp" placeholder="ex:asus">
+                            
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="exampleInputEmail1">visuelle</label>
+                            <input type="text" class="form-control" id="conseil" name="visuelle" aria-describedby="emailHelp" placeholder="visuelle">
+
+                            
+                        </div> -->
+                        <div class="form-group">
+                                <label for="file">image</label>
+                                <input type="file" name="visuelle" class="form-control" id="visuelle"/>
+                        </div>
+
                         
-                        <h1>Ajouter</h1>
-                        <form method="POST" action="treatment.php"enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">nom</label>
-                                <input type="text"  class="form-control" id="nom" name="nom" aria-describedby="emailHelp" value="<?= $donnees['nom'] ?>">
-                                
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">famille de la plante</label>
-                                <input type="text" class="form-control" id="famille" name="famille" aria-describedby="emailHelp"value="<?= $donnees['famille'] ?>">
-                                <!--id	-nom	-periodeP	-periodeR	-conseil	-quantite	-visuelle	-famille-->
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">periode plantation</label>
-                                <input type="number"  class="form-control" id="periodeP" name="periodeP" aria-describedby="emailHelp" value="<?= $donnees['periodeP'] ?>">
-                                
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">periode de recolte</label>
-                                <input type="number" class="form-control" id="periodeR" name="periodeR" aria-describedby="emailHelp" value="<?= $donnees['periodeR'] ?>">
-                                
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">quantité</label>
-                                <input type="number" class="form-control" id="quantite" name="quantite" aria-describedby="emailHelp" value="<?= $donnees['quantite'] ?>">
-                                
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">conseil</label>
-                                <input type="text" class="form-control" id="conseil" name="conseil" aria-describedby="emailHelp" value="<?= $donnees['conseil'] ?>">
-                                
-                            </div>
-                            <div class="form-group">
-                                    <label for="file">image</label>
-                                    <input type="file" name="visuelle" class="form-control" id="visuelle" value="<?= $donnees['visuelle'] ?>"/>
-                            </div>
-                            <!-- <div class="form-group">
-                                    <label for="file">image</label>
-                                    <input type="file" name="visuelle" class="form-control" id="visuelle"/>
-                            </div>-->
-
-                            
-                            
-                            <!-- <input type="hidden"  name="form-edit"> -->
-                            <input type="hidden" name="id" value="<?php echo $_GET['edit'];?>">
-                            <!-- <button type="submit" class="btn btn-primary">ajouter</button> -->
-                            <button type="submit" class="btn btn-primary" name="form-edit">Ajouter</button>                       
-                        </form>
-                    
-
-                 </section>
-                    
-                    </div>
+                        
+                        <input type="hidden"  name="form-edit">
+                        <button type="submit" class="btn btn-primary">modifier</button>
+                       
+                    </form>
+                    </section>
                 </div>
             </div>
+        </div>
 
         <?php include_once './view/footer.html'; ?>
 
     </body>
 </html>
+
