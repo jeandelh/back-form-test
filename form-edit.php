@@ -30,16 +30,16 @@ include 'includes/bdd.inc.php';
                         <h1>modifier</h1>
                         <div class="form-group">
                             <label for="exampleInputEmail1">type matériel</label>
-                            <input type="text"  class="form-control" id="typeMateriel" name="typeMateriel" aria-describedby="emailHelp" placeholder="ex:ordinateur">
-                             
+                            <input type="text"  class="form-control" id="typeMateriel" name="typeMateriel" aria-describedby="emailHelp" value="<?= $donnees['typeMateriel'] ?>">
+                            
                         <div class="form-group">
                             <label for="exampleInputEmail1">état</label>
-                            <input type="text" class="form-control" id="etat" name="etat" aria-describedby="emailHelp" placeholder="ex:bon état">
+                            <input type="text" class="form-control" id="etat" name="etat" aria-describedby="emailHelp" value="<?= $donnees['etat'] ?>">
                            
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">localisation</label>
-                            <input type="text"  class="form-control" id="localisation" name="localisation" aria-describedby="emailHelp" placeholder="ex:paris">
+                            <input type="text"  class="form-control" id="localisation" name="localisation" aria-describedby="emailHelp">
                             
                         </div>
                         <div class="form-group">
